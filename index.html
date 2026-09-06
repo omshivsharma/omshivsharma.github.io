@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omshiv Sharma — Product / Data Analyst</title>
+<meta name="description" content="Omshiv Sharma — Product / Data Analyst with ~2 years turning product and behavioural data into decisions. SQL, Python, Power BI, experimentation, and AI-for-analytics tooling.">
+<meta property="og:title" content="Omshiv Sharma — Product / Data Analyst">
+<meta property="og:description" content="Analytics, experimentation, and AI tooling. SQL · Python · Power BI · Snowflake.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1120; --bg-soft:#0f172a; --card:#121a2e; --card-2:#0f1628;
+  --text:#e6edf7; --muted:#94a3b8; --faint:#64748b;
+  --border:rgba(148,163,184,.14); --border-strong:rgba(148,163,184,.28);
+  --accent:#6366f1; --accent-2:#22d3ee; --accent-soft:rgba(99,102,241,.14);
+  --shadow:0 10px 40px -12px rgba(0,0,0,.6);
+  --maxw:1080px;
+}
+html[data-theme="light"]{
+  --bg:#f7f9fc; --bg-soft:#eef2f8; --card:#ffffff; --card-2:#f4f7fb;
+  --text:#0f172a; --muted:#475569; --faint:#94a3b8;
+  --border:rgba(15,23,42,.10); --border-strong:rgba(15,23,42,.18);
+  --accent:#4f46e5; --accent-2:#0891b2; --accent-soft:rgba(79,70,229,.08);
+  --shadow:0 10px 40px -16px rgba(15,23,42,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.mono{font-family:'JetBrains Mono',monospace}
+.accent{color:var(--accent)}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.theme-btn{background:var(--card);border:1px solid var(--border);color:var(--text);
+  width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1rem;
+  display:grid;place-items:center;transition:border-color .2s,transform .2s}
+.theme-btn:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:11px;
+  font-weight:600;font-size:.92rem;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;border:1px solid transparent}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 8px 24px -8px var(--accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px var(--accent)}
+.btn-ghost{background:var(--card);border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+
+/* HERO */
+.hero{padding:110px 0 84px;position:relative}
+.hero::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);
+  width:680px;height:680px;max-width:100%;
+  background:radial-gradient(circle,var(--accent-soft),transparent 62%);z-index:-1;filter:blur(10px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;
+  color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:100px;margin-bottom:22px}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px}
+.hero h1 .grad{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .role{font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--muted);font-weight:500;margin-bottom:22px}
+.hero p.lead{max-width:640px;color:var(--muted);font-size:1.05rem;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:64px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+.stat .num{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;
+  background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat .lbl{font-size:.85rem;color:var(--muted);margin-top:4px}
+
+/* SECTION HEAD */
+.sec-head{margin-bottom:48px}
+.sec-head .kicker{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.85rem;font-weight:500;letter-spacing:.02em}
+.sec-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-top:8px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+.about-grid p{color:var(--muted);margin-bottom:16px;font-size:1.02rem}
+.about-grid strong{color:var(--text);font-weight:600}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px}
+.info-card h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);margin-bottom:16px}
+.info-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--border);font-size:.95rem}
+.info-row:last-child{border-bottom:none}
+.info-row span:first-child{color:var(--muted)}
+.info-row span:last-child{font-weight:600;text-align:right}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .2s,transform .2s}
+.skill-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.skill-card h3{font-size:1.02rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill-card .ico{font-size:1.15rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:.82rem;font-weight:500;color:var(--muted);background:var(--card-2);
+  border:1px solid var(--border);padding:5px 11px;border-radius:8px}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:0}
+.job{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--border)}
+.job:first-child{border-top:none}
+.job-meta .co{font-weight:700;font-size:1.05rem}
+.job-meta .date{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);margin-top:6px}
+.job-meta .loc{font-size:.85rem;color:var(--faint);margin-top:4px}
+.job-body .title{font-weight:600;color:var(--text);margin-bottom:12px;font-size:1.02rem}
+.job-body ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.job-body li{position:relative;padding-left:22px;color:var(--muted);font-size:.97rem}
+.job-body li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-weight:700}
+.job-body li strong{color:var(--text);font-weight:600}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.proj{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;
+  display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s}
+.proj:hover{border-color:var(--border-strong);transform:translateY(-4px);box-shadow:var(--shadow)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.proj-badge{font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);padding:5px 10px;border-radius:7px}
+.proj-badge.ai{color:#22d3ee;background:rgba(34,211,238,.12)}
+.proj-links{display:flex;gap:12px;font-size:1.1rem;color:var(--muted)}
+.proj-links a:hover{color:var(--accent)}
+.proj h3{font-size:1.2rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.proj p{color:var(--muted);font-size:.94rem;margin-bottom:18px;flex-grow:1}
+.proj .stack{display:flex;flex-wrap:wrap;gap:7px}
+.proj .stack span{font-size:.76rem;font-family:'JetBrains Mono',monospace;color:var(--faint);
+  background:var(--card-2);padding:4px 9px;border-radius:6px;border:1px solid var(--border)}
+
+/* CONTACT */
+.contact{text-align:center}
+.contact .sec-head{margin-bottom:20px}
+.contact p.sub{color:var(--muted);max-width:520px;margin:0 auto 34px;font-size:1.05rem}
+.contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--faint);font-size:.88rem}
+footer .social{display:flex;gap:20px;justify-content:center;margin-bottom:14px;font-size:1.3rem}
+footer .social a{color:var(--muted);transition:color .2s,transform .2s;display:inline-block}
+footer .social a:hover{color:var(--accent);transform:translateY(-2px)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;
+    background:var(--bg-soft);border-bottom:1px solid var(--border);padding:20px 24px;gap:18px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:28px}
+  .skills-grid,.proj-grid{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:14px}
+  section{padding:72px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="logo">Omshiv<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Open to remote analyst roles · India / Global</div>
+    <h1>Hi, I'm Omshiv —<br>I turn data into <span class="grad">decisions</span>.</h1>
+    <p class="role">Product / Data Analyst @ Swiggy · SQL · Python · Power BI · Experimentation · AI-for-analytics</p>
+    <p class="lead">~2 years turning product and behavioural data into decisions at scale. I own experimentation end-to-end, dig through funnels to find where users drop, and build lightweight AI tooling that takes the grunt work out of analytics.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects →</a>
+      <a href="assets/Omshiv_Sharma_Resume.pdf" class="btn btn-ghost" target="_blank">↓ Résumé</a>
+      <a href="https://github.com/omshivsharma" class="btn btn-ghost" target="_blank">GitHub</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><div class="num">~2 yrs</div><div class="lbl">Analytics experience</div></div>
+      <div class="stat reveal"><div class="num">10+</div><div class="lbl">A/B experiments owned</div></div>
+      <div class="stat reveal"><div class="num">~40%</div><div class="lbl">Manual analytics automated</div></div>
+      <div class="stat reveal"><div class="num">1M+</div><div class="lbl">User interactions analyzed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">01 / about</div><h2>A bit about me</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm a <strong>Product / Data Analyst</strong> currently at <strong>Swiggy</strong>, where I own product experimentation from hypothesis to readout — defining metrics, running significance tests, and translating messy behavioural data into decisions PMs actually ship.</p>
+        <p>My edge is pairing solid analytics fundamentals with <strong>AI tooling</strong>: I've built an AI experiment-evaluation agent that cut manual analytics effort by ~40%, and Snowflake-powered dashboards that gave leaders self-serve visibility across cities and cohorts.</p>
+        <p>Before Swiggy I worked across <strong>mobility (Matter Energy)</strong> and <strong>healthcare (Curaxo)</strong> — so I've analysed conversion funnels, demand, and customer behaviour across very different sectors. I'm now looking for <strong>fully-remote analyst roles</strong> where I can do the same, from anywhere.</p>
+      </div>
+      <div class="info-card reveal">
+        <h3>Quick facts</h3>
+        <div class="info-row"><span>Role</span><span>Product / Data Analyst</span></div>
+        <div class="info-row"><span>Experience</span><span>~2 years</span></div>
+        <div class="info-row"><span>Education</span><span>B.Tech, NIT Kurukshetra</span></div>
+        <div class="info-row"><span>CGPA</span><span>8.12 / 10</span></div>
+        <div class="info-row"><span>Location</span><span>India · Remote</span></div>
+        <div class="info-row"><span>Availability</span><span>Open to opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">02 / skills</div><h2>What I work with</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3><span class="ico">🧪</span> Analytics & Experimentation</h3>
+        <div class="tags">
+          <span class="tag">A/B testing</span><span class="tag">Hypothesis testing</span><span class="tag">Z-tests / Bayesian</span>
+          <span class="tag">Funnel & clickstream</span><span class="tag">Root-cause analysis</span><span class="tag">Cohort / retention</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="ico">💻</span> Languages & Query</h3>
+        <div class="tags">
+          <span class="tag">SQL (window fns, CTEs)</span><span class="tag">Python</span><span class="tag">Pandas</span>
+          <span class="tag">scikit-learn</span><span class="tag">Statistics</span><span class="tag">Web scraping</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="ico">📊</span> Data & BI</h3>
+        <div class="tags">
+          <span class="tag">Snowflake</span><span class="tag">Databricks</span><span class="tag">Power BI</span>
+          <span class="tag">PostgreSQL</span><span class="tag">Excel</span><span class="tag">Data pipelines</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="ico">🤖</span> AI / ML & Tools</h3>
+        <div class="tags">
+          <span class="tag">LLM analytics agents</span><span class="tag">Regression & tree models</span><span class="tag">Claude Code</span>
+          <span class="tag">Git</span><span class="tag">Jupyter</span><span class="tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">03 / experience</div><h2>Where I've worked</h2></div>
+    <div class="timeline">
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <div class="co">Swiggy</div>
+          <div class="date">Feb 2026 — Present</div>
+          <div class="loc">Product Analyst</div>
+        </div>
+        <div class="job-body">
+          <div class="title">Product experimentation & storefront analytics</div>
+          <ul>
+            <li>Built <strong>Experiment Evaluator</strong>, an AI agent automating A/B evaluation end-to-end — sanity checks, data validation, significance (Z-tests / Bayesian), anomaly flags, and draft readouts — cutting manual effort <strong>~40%</strong>.</li>
+            <li>Built a unified <strong>L-2 order-attribution table</strong> instrumenting all L2/L3 storefront pages into a single self-serve source of truth, replacing siloed tracking.</li>
+            <li>Evaluated <strong>10+ experiments</strong> (ARDs, L1/L2 analysis, significance testing) across EatRight and the Gourmet revamp, supporting scale / iterate / roll-back calls.</li>
+            <li>Ran deep EDAs & RCAs across Food and Menu journeys (SQL, Python/Pandas), owning funnel metrics (<strong>F2M, M2C, M2O</strong>) tied to OPD and AOV impact.</li>
+            <li>Shipped a Snowflake-SQL-powered dashboard for PMs and leaders to track campaign and page performance across city and customer cohorts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <div class="co">Matter Energy</div>
+          <div class="date">Jul 2024 — Dec 2025</div>
+          <div class="loc">Business Analyst</div>
+        </div>
+        <div class="job-body">
+          <div class="title">Conversion, demand & analytics automation</div>
+          <ul>
+            <li>Analysed <strong>1M+ user interactions</strong> (SQL, Python/Pandas) to surface drop-offs in the car-buying journey and optimise demand forecasting — improving <strong>conversion by 12%</strong>.</li>
+            <li>Built and maintained interactive <strong>Power BI dashboards</strong> tracking engagement, conversion, and demand — cutting reporting time <strong>40%</strong>.</li>
+            <li>Owned end-to-end automation of sales-data collection, reporting, and QC in Python/SQL, cutting insight-generation time <strong>25%</strong>.</li>
+            <li>Refactored heavy SQL joins and aggregations, reducing runtimes and improving data-availability SLAs for downstream reporting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <div class="co">Curaxo Healthcare</div>
+          <div class="date">Jan 2023 — Jun 2023</div>
+          <div class="loc">Business Analyst Intern</div>
+        </div>
+        <div class="job-body">
+          <div class="title">Catalog optimisation & customer behaviour</div>
+          <ul>
+            <li>Analysed <strong>5,000+ orders</strong> and 3 months of sales data (SQL, Excel) to optimise the catalog — improving <strong>sales by 8%</strong>.</li>
+            <li>Built automated Power BI dashboards for daily orders, delivery timelines, and repeat customers — cutting manual reporting <strong>35%</strong>.</li>
+            <li>Ran a customer-behaviour study on <strong>1,200+ responses</strong> (survey + web logs), lifting completed orders <strong>10%</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">04 / projects</div><h2>Things I've built</h2></div>
+    <div class="proj-grid">
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <span class="proj-badge">E-commerce</span>
+          <div class="proj-links"><a href="https://github.com/omshivsharma/analytics-ai-portfolio/tree/main/01-ecommerce-funnel-diagnoser" target="_blank" title="View code">↗</a></div>
+        </div>
+        <h3>Funnel Drop-off Diagnoser</h3>
+        <p>Ingests session data, builds the view→cart→checkout→purchase funnel, compares two periods, and automatically ranks which segment (device, browser, city, channel) explains a conversion drop — a mini automated root-cause report.</p>
+        <div class="stack"><span>Python</span><span>Pandas</span><span>DuckDB/SQL</span><span>RCA</span></div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <span class="proj-badge ai">Healthcare · AI</span>
+          <div class="proj-links"><a href="https://github.com/omshivsharma/analytics-ai-portfolio/tree/main/03-healthcare-noshow-ai" target="_blank" title="View code">↗</a></div>
+        </div>
+        <h3>AI No-Show & Feedback Engine</h3>
+        <p>Predicts appointment no-show risk, plus an LLM layer that reads free-text patient feedback and returns structured themes, sentiment, and suggested actions — so ops can prioritise outreach and recover revenue.</p>
+        <div class="stack"><span>scikit-learn</span><span>LLM</span><span>NLP</span><span>Python</span></div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <span class="proj-badge ai">Finance · AI</span>
+          <div class="proj-links"><a href="https://github.com/omshivsharma/analytics-ai-portfolio/tree/main/04-finance-credit-risk-ai" target="_blank" title="View code">↗</a></div>
+        </div>
+        <h3>AI Credit-Risk Explainer</h3>
+        <p>A credit-default risk model paired with an LLM that turns each decision into a plain-English "why" ("declined mainly due to high utilisation + short history"), grounded in the model's SHAP feature contributions — regulator-friendly.</p>
+        <div class="stack"><span>XGBoost</span><span>SHAP</span><span>LLM</span><span>Explainability</span></div>
+      </div>
+
+      <div class="proj reveal">
+        <div class="proj-top">
+          <span class="proj-badge">Fintech · Personal</span>
+          <div class="proj-links"><span title="Private / self-hosted" style="cursor:default">🔒</span></div>
+        </div>
+        <h3>Personal Finance Tracker</h3>
+        <p>Built on India's Account Aggregator framework — pulls bank transactions via consent-based APIs and auto-categorises every rupee with a rules-plus-LLM engine that tags messy UPI narrations. Self-hosted, single-user, encrypted-at-rest.</p>
+        <div class="stack"><span>Account Aggregator</span><span>LLM</span><span>Python</span><span>Privacy-first</span></div>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:36px">
+      <a href="https://github.com/omshivsharma/analytics-ai-portfolio" class="btn btn-ghost" target="_blank">See all code on GitHub →</a>
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center"><div class="kicker">05 / contact</div><h2>Let's talk</h2></div>
+    <p class="sub reveal">I'm open to fully-remote analyst and data roles. If you're hiring — or just want to talk data, experimentation, or AI-for-analytics — reach out.</p>
+    <div class="contact-actions reveal">
+      <a href="mailto:omshivsharma.work@gmail.com" class="btn btn-primary">✉ Email me</a>
+      <a href="https://www.linkedin.com/in/OmshivSharma" class="btn btn-ghost" target="_blank">LinkedIn</a>
+      <a href="https://github.com/omshivsharma" class="btn btn-ghost" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="social">
+      <a href="https://github.com/omshivsharma" target="_blank" aria-label="GitHub">⌂</a>
+      <a href="https://www.linkedin.com/in/OmshivSharma" target="_blank" aria-label="LinkedIn">in</a>
+      <a href="mailto:omshivsharma.work@gmail.com" aria-label="Email">✉</a>
+    </div>
+    <div>© <span id="year"></span> Omshiv Sharma · Built from scratch, no template.</div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+const root=document.documentElement, tbtn=document.getElementById('themeBtn');
+const saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved);
+const syncIcon=()=>tbtn.textContent=root.getAttribute('data-theme')==='light'?'☀️':'🌙';
+syncIcon();
+tbtn.addEventListener('click',()=>{
+  const next=root.getAttribute('data-theme')==='light'?'dark':'light';
+  root.setAttribute('data-theme',next);localStorage.setItem('theme',next);syncIcon();
+});
+// Mobile menu
+const mbtn=document.getElementById('menuBtn'), links=document.getElementById('navLinks');
+mbtn.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+// Reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
