@@ -49,8 +49,13 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
 .logo span{color:var(--accent)}
 .nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s}
+.nav-links a{position:relative;color:var(--muted);font-size:.92rem;font-weight:500;transition:color .25s}
 .nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  transform:scaleX(0);transform-origin:center;transition:transform .3s ease}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
 .nav-actions{display:flex;gap:12px;align-items:center}
 .theme-btn{background:var(--card);border:1px solid var(--border);color:var(--text);
   width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1rem;
@@ -462,6 +467,21 @@ if('IntersectionObserver' in window){
   setTimeout(()=>document.querySelectorAll('.reveal:not(.show)').forEach(el=>el.classList.add('show')),3000);
 }else{
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+}
+// Scroll-spy: highlight the nav link of the section in view
+const navAnchors=[...document.querySelectorAll('.nav-links a')];
+const navFor={}; navAnchors.forEach(a=>navFor[a.getAttribute('href').slice(1)]=a);
+const spySections=[...document.querySelectorAll('section[id]')];
+if('IntersectionObserver' in window && spySections.length){
+  const spy=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navAnchors.forEach(a=>a.classList.remove('active'));
+        if(navFor[e.target.id]) navFor[e.target.id].classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px',threshold:0});
+  spySections.forEach(s=>spy.observe(s));
 }
 // Year
 document.getElementById('year').textContent=new Date().getFullYear();
