@@ -468,21 +468,20 @@ if('IntersectionObserver' in window){
 }else{
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
 }
-// Scroll-spy: highlight the nav link of the section in view
+// Scroll-spy: highlight the nav link of the section in view (scroll-position based)
 const navAnchors=[...document.querySelectorAll('.nav-links a')];
 const navFor={}; navAnchors.forEach(a=>navFor[a.getAttribute('href').slice(1)]=a);
 const spySections=[...document.querySelectorAll('section[id]')];
-if('IntersectionObserver' in window && spySections.length){
-  const spy=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        navAnchors.forEach(a=>a.classList.remove('active'));
-        if(navFor[e.target.id]) navFor[e.target.id].classList.add('active');
-      }
-    });
-  },{rootMargin:'-45% 0px -50% 0px',threshold:0});
-  spySections.forEach(s=>spy.observe(s));
+function updateActiveNav(){
+  const line=window.scrollY + window.innerHeight*0.35;
+  let current=null;
+  spySections.forEach(s=>{ if(s.offsetTop<=line) current=s.id; });
+  navAnchors.forEach(a=>a.classList.toggle('active', current!=null && navFor[current]===a));
 }
+let spyTick=false;
+window.addEventListener('scroll',()=>{ if(!spyTick){ spyTick=true; requestAnimationFrame(()=>{ updateActiveNav(); spyTick=false; }); } },{passive:true});
+window.addEventListener('resize',updateActiveNav,{passive:true});
+updateActiveNav();
 // Year
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
